@@ -2,4 +2,4 @@ Wireshark captures
 
 
 
-![alt text](https://github.com/kbeeperez/ft-documentation/pcaps/wireshark.png?raw=true)
+![alt text](https://github.com/kbeeperez/ft-documentation/blob/main/pcaps/wireshark.png)
