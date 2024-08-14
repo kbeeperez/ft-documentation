@@ -1,6 +1,6 @@
 ## Documentation for fishertechnik Training Factory 4.0 9V 536629
 
-
+Working factory: https://www.youtube.com/watch?v=BApxuYlsT_w \
 **TXT-security**: Connecting to TXT controller via SSH, instructions for setting up ROOT password in order to gain root privileges\
 **Update TXT**: Instructions to update firmware on the controllers\
 **ROBOPro-manual**: Manual for using the ROBOPro software\
