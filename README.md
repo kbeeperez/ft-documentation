@@ -12,5 +12,5 @@ Useful links:\
 **fischertechnik's offical github:** https://github.com/fischertechnik \
 **fishertechnik Community firmware:** https://github.com/ftCommunity/ftcommunity-TXT \
 **Hubb Van Nuetrk's blo:** Lots of video tutorials with fischertechnik machines, https://niekerha.home.xs4all.nl/Robotics-Mirft2.html \
-**fischertechnik forums:** Good for asking questions, community is quick to help. https://forum.ftcommunity.de/viewforum.php?f=8 (wil need to translate from german) \
+**fischertechnik forums:** Good for asking questions, community is quick to help. https://forum.ftcommunity.de/viewforum.php?f=8 (wil need to translate from german)
 
