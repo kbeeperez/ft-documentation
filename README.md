@@ -48,7 +48,7 @@ If the firmware version is **earlier** than 4.5.0 check if the files can be foun
 
 To access the web server make sure that the WEB server is switched on, a "ws" symbol will be displayed on the TXT status bar.
 
-![WEB server enabled](/home/kat/Desktop/ft-factory-simulation/pictures/Screenshot%202024-07-02%20at%2011.45.15%E2%80%AFAM.png)
+![WEB server enabled](https://github.com/kbeeperez/ft-documentation/blob/main/imgs/settings.png)
 
 The WEB page of the TXT controller can be accessed when the IP address is entered in the WEB browser (*Chrome or Firefox are recommended*) after the TXT has been connected via USB.
 
@@ -60,9 +60,9 @@ The page is password protected.
 
 > Password: Four-digit number of the TXT controller displayed in the upper status bar on the TXT display (e.g. 6892 if "TXT-6892" is displayed)
 
-![Password prompt](/home/kat/Desktop/ft-factory-simulation/pictures/Screenshot%202024-07-02%20at%2012.54.25%E2%80%AFPM.png)
+![Password prompt]()
 
-![TXT WEB server dashbaord](/home/kat/Desktop/ft-factory-simulation/pictures/Screenshot%202024-07-02%20at%2012.59.03%E2%80%AFPM.png)
+![TXT WEB server dashbaord](https://github.com/kbeeperez/ft-documentation/blob/main/imgs/web-dashbaord.png)
 
 <p>
 
