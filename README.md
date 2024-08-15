@@ -126,3 +126,6 @@ This interface test allows you to check the light sensorss and motors are runnin
 ## Capturing traffic
 Wireshark can be used to capture the traffic through USB connection to the TXT controller running the `WarehouseGripperRobot.rpp` on the ROBOPro terminal.
 
+The TXT controllers can also be used at MQTT brokers, further intructions: https://github.com/fischertechnik/txt_training_factory/blob/master/TxtSmartFactoryLib/doc/MqttInterface.md /
+The `ft-txt-bridge-cloud.conf` file is stored on the HBW controller under `/etc/mosquitto/` but root privliges are required to view/edit.
+
