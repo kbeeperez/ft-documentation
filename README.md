@@ -1,7 +1,5 @@
 ## Documentation for fishertechnik Training Factory 4.0 9V 536629
 
-Working factory: https://www.youtube.com/watch?v=BApxuYlsT_w \
-
 ### docs
 **TXT-security**: Connecting to TXT controller via SSH, instructions for setting up ROOT password in order to gain root privileges\
 **Update TXT**: Instructions to update firmware on the controllers\
@@ -37,6 +35,8 @@ The ROBO Pro Coding App allows you to program models at different difficulty lev
 ROBOPro 4.7.0 is a Windows application, to run on a different OS requires a Windows virtual machine. This application allows you to create and test `.rpp` files, sample files for the training facility are available in the path: `Program Files (x86)\ROBOPro\Sample Programs\Training Models`, but all the necessary programs for the factory are in github [https://github.com/kbeeperez/ft-documentation/tree/main/ft-program](https://github.com/kbeeperez/ft-documentation/tree/main/ft-program)
 
 ## Backing up and updating controllers
+
+If there TXT's become damaged, they can be fixed following: https://github.com/fischertechnik/FT-TXT/blob/master/TXT-Linux-FAQ.md#attach-serial-usb-converter
 
 ### TXT WEB server
 
@@ -84,9 +84,44 @@ To have the most recent version, make sure the ROBOPro program is up to date by 
 
 The controller of the vacuum gripper robot is an extension of the warehouse and needs no extra program in order to work!
 
+![ROBOPro example](https://github.com/kbeeperez/ft-documentation/blob/main/imgs/robopro-example.png)
+
 ## 536629 Factory Simulation
 
-`536629-factory_simulation_9v_edu.pdf` is the manual for the simulation factory and covers all the parts.
+Working factory: https://www.youtube.com/watch?v=BApxuYlsT_w 
+
+`536629-factory_simulation_9v_edu.pdf` is the manual for the simulation factory and covers the fucntion of all the parts. \
+Ensure all TXT controllers are connected to power and on. \
+The Highbay Warehouse (HBW) TXT is the Master controller and the Vaccum Gripper Robot (VGR) TXT is the extension. \
+Program, Warehouse_GripperRobot.rpp, should be auto-loaded on the HBW TXT and ready to start, but if it is not, the file will be under the ROBOPro folder on the TXT. The HBW stored workpieces by color, the top level is White, second level is Red and last level Blue.
+
+
+The Multi-Processing station with Oven (MPO) has a Master controller at the Milling and Ejector station while the Oven is controlled by the extension TXT. The program, ProcessingStation.rpp, should be loaded and ready to start. \
+
+> notes: The WAN features on the MPO master TXT do not work properly, it does not connect to wifi. May need to be re-flashed.
+
+Sorting Line and Color Detector (SL) are controlled by a single TXT program, Sorting_Line.rpp.
+
+Start the workpieces in the Sorting Line, first row is White, second row is Red, and last row is Blue.
+![Sorting Line](https://github.com/kbeeperez/ft-documentation/blob/main/imgs/Sortierstrecke-mit-Farberkennung%20(6).JPG)
+
+The factory should run in a cycle as follows:
+- The workpiece blocking the light sensor signal to the VGR that there is a piece ready to transport.
+- The VGR picks up the work piece and delivers it to the conveyor belt at the HBW.
+- The HBW will have pulled an empty storage container and bring it to the converyor built, the conveyor built will deliver the storage piece.
+- Once the storage container reaches the end of the conveyor belt the VGR will release the workpiece and the conveyor built will return the storage container back to the HBW.
+- The HBW will store the container, marking which shelves are occupied.
+- After all workpieces have been stored the HBW will began moving them for processing.
+- The VGR will deliver the workpieces to the MPO where they will go through a processing stage and then be delivered to the SL.
+- The SL sorts workpieces by color and the cycle starts all over again.
+
+If there is an issue and where the factories get stuck a gentle push or tap can help start the motor again. If the facotry is not running as descibed connect the TXT controller to a computer in order to do a interface test, the ROBOPro manual has examples on how to use it. 
+
+This interface test allows you to check the light sensorss and motors are running correctly on each TXT controller, also allows checking while running program from ROBOPro terminal.
+
+![ROBOPro Interface Test](https://github.com/kbeeperez/ft-documentation/blob/main/imgs/connections.png)
+
+
 
 ## Capturing traffic
 Wireshark can be used to capture the traffic through USB connection to the TXT controller running the `WarehouseGripperRobot.rpp` on the ROBOPro terminal.
